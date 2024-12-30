@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <link rel="icon" href="img/payment-methods-svgrepo-com.png" type="image/x-icon">
+</head>
+<body>
+    <style>
+        body, html {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
+        }
+        .payment {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .payTitle {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .payInput {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cardIcons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .cardInfo {
+            display: flex;
+            gap: 10px;
+        }
+        .payInput.sm {
+            width: calc(33.33% - 6.66px);
+        }
+        .payButton {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .payButton:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+            width: 90%;
+            margin: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .payInput, .payInput.sm {
+                width: calc(100% - 20px);
+            }
+            .cardInfo {
+                flex-direction: column;
+            }
+        }
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #f8f9fa;
+            color: #dc3545;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            top: 30px;
+            font-size: 17px;
+        }
+
+        .toast.success {
+            color: #28a745;
+        }
+        
+        .toast.show {
+            visibility: visible;
+            transition: 0.5s ease-out;
+        }
+
+    </style>
+    <div id="toast" class="toast"></div>
+    <div class="payment">
+        <h1 class="payTitle">Personal Method</h1>
+        <label>Full Name</label>
+        <input type="text" placeholder="Alice Tem's" class="payInput">
+        <label>Phone Number</label>
+        <input type="text" placeholder="+1 234 5678 890" class="payInput">
+        <label>Address</label>
+        <input type="text" placeholder="Elton St 21 22-145" class="payInput">
+        <h1 class="payTitle">Card Information</h1>
+        <div class="cardIcons">
+            <img src="./img/visa.png" width="40" alt="" class="cardIcon">
+            <img src="./img/master.png" alt="" width="40" class="cardIcon">
+        </div>
+        <input type="password" class="payInput" placeholder="Card Number">
+        <div class="cardInfo">
+            <input type="text" placeholder="mm" class="payInput sm">
+            <input type="text" placeholder="yyyy" class="payInput sm">
+            <input type="text" placeholder="cvv" class="payInput sm">
+        </div>
+        <button class="payButton">Checkout!</button>
+        <footer class="footer">
+            @KelvinCode1234 | All Rights Reserved 2024
+        </footer>
+    </div>
+</body>
+</html>    </div>
+    <script>
+        document.querySelector('.payButton').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('.payInput');
+            let allFilled = true;
+            inputs.forEach(input => {
+                if (input.value === '') {
+                    allFilled = false;
+                }
+            });
+            const toast = document.getElementById('toast');
+            if (allFilled) {
+                toast.textContent = 'Payment is not secured yet, stay tuned with us!';
+            } else {
+                toast.textContent = 'Please fill in all the information.';
+            }
+            toast.className = 'toast show';
+            setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 3000);
+        });
+    </script>
+</body>
+</html>

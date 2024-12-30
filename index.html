@@ -1,0 +1,294 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="img/nike.png" type="image/x-icon">
+    <link rel="stylesheet" href="Payment.html">
+    <title>Nike E-Commerce</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            if (!sessionStorage.getItem('visited')) {
+                var toast = document.createElement('div');
+                toast.innerHTML = "Nike E-Commerce says: This website is not fully functioned, stay tuned with us!";
+                toast.style.visibility = 'hidden';
+                toast.style.maxWidth = '90%';  
+                toast.style.marginLeft = '-125px';
+                toast.style.backgroundColor = '#333';
+                toast.style.color = '#fff';
+                toast.style.textAlign = 'center';
+                toast.style.borderRadius = '2px';
+                toast.style.padding = '16px';
+                toast.style.position = 'fixed';
+                toast.style.zIndex = '1';
+                toast.style.left = '50%';
+                toast.style.top = '30px';  
+                toast.style.fontSize = '17px';
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.5s, top 0.5s ease-in-out';
+
+                
+                if (window.innerWidth <= 600) {
+                    toast.style.fontSize = '14px';  
+                    toast.style.padding = '12px';   
+                }
+
+                
+                document.body.appendChild(toast);
+
+                
+                setTimeout(function() {
+                    toast.style.visibility = 'visible';
+                    toast.style.opacity = '1';
+                    toast.style.top = '50px'; 
+                }, 10);
+
+                
+                setTimeout(function() {
+                    toast.style.visibility = 'hidden';
+                    toast.style.opacity = '0';
+                    toast.style.top = '30px'; 
+                }, 5000);
+
+                sessionStorage.setItem('visited', 'true');
+            }
+        }
+
+
+    </script>
+    <nav id="nav">
+        <div class="navTop">
+            <div class="navItem">
+                <img src="./img/sneakers.png" alt="">
+            </div>
+            <div class="navItem">
+                <div class="search">
+                    <input type="text" placeholder="Search..." class="searchInput">
+                    <img src="./img/search.png" width="20" height="20" alt="" class="searchIcon">
+                </div>
+            </div>
+            <div class="navItem">
+                <span class="limitedOffer">Limited Offer!</span>
+            </div>
+        </div>
+        <div class="navBottom">
+            <h3 class="menuItem" id="#pair1">AIR FORCE</h3>
+            <h3 class="menuItem" id="#pair2">JORDAN</h3>
+            <h3 class="menuItem" id="#pair3">BLAZER</h3>
+            <h3 class="menuItem" id="#pair4">CRATER</h3>
+            <h3 class="menuItem" id="#pair5">HIPPIE</h3>
+        </div>
+    </nav>
+    <div class="slider">
+        <div class="sliderWrapper">
+            <div class="sliderItem">
+                <img src="./img/air.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">AIR FORCE</br> NEW</br> SEASON</h1>
+                <h2 class="sliderPrice">$119</h2>
+                <a href="#product">
+                    <button class="buyButton">BUY NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="./img/jordan.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle" id="pair2">AIR JORDAN</br> NEW</br> SEASON</h1>
+                <h2 class="sliderPrice">$149</h2>
+                <a href="#product">
+                    <button class="buyButton">BUY NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="./img/blazer.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle" id="pair3">BLAZER</br> NEW</br> SEASON</h1>
+                <h2 class="sliderPrice">$109</h2>
+                <a href="#product">
+                    <button class="buyButton">BUY NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="./img/crater.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle" id="pair4">CRATER</br>NEW</br>SEASON</h1>
+                <h2 class="sliderPrice">$129</h2>
+                <a href="#product">
+                    <button class="buyButton">BUY NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="./img/hippie.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle" id="pair5">HIPPIE</br> NEW</br> SEASON</h1>
+                <h2 class="sliderPrice">$99</h2>
+                <a href="#product">
+                    <button class="buyButton">BUY NOW!</button>
+                </a>
+            </div>
+        </div>
+    </div>
+   
+    <div class="features">
+        <div class="feature">
+            <img src="./img/shipping.png" alt="" class="featureIcon">
+            <span class="featureTitle">FREE SHIPPING</span>
+            <span class="featureDesc">Free worldwide shipping on all orders.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./img/return.png" alt="">
+            <span class="featureTitle">30 DAYS RETURN</span>
+            <span class="featureDesc">No question return and easy refund in 14 days.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./img/gift.png" alt="">
+            <span class="featureTitle">GIFT CARDS</span>
+            <span class="featureDesc">Buy gift cards and use coupon codes easily.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./img/contact.png" alt="">
+            <span class="featureTitle">CONTACT US!</span>
+            <span class="featureDesc">Keep in touch via email and support system.</span>
+        </div>
+    </div>
+
+    <div class="product" id="product">
+        <img src="./img/air.png" alt="" class="productImg">
+        <div class="productDetails">
+            <h1 class="productTitle">AIR FORCE</h1>
+            <h2 class="productPrice">$199</h2>
+            <p class="productDesc">
+                Sneakers are stylish, versatile footwear blending comfort and fashion effortlessly. Perfect for all occasions!
+            </p>
+            <div class="colors">
+                <div class="color"></div>
+                <div class="color"></div>
+            </div>
+            <div class="sizes">
+                <div class="size">42</div>
+                <div class="size">43</div>
+                <div class="size">44</div>
+            </div>
+            <button class="productButton"> <a href="Payment.html">BUY NOW!</a></button>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="galleryItem">
+            <h1 class="galleryTitle">Be Yourself!</h1>
+            <img src="https://images.pexels.com/photos/9295809/pexels-photo-9295809.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt="" class="galleryImg">
+        </div>
+        <div class="galleryItem">
+            <img src="https://images.pexels.com/photos/1040427/pexels-photo-1040427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt="" class="galleryImg">
+            <h1 class="galleryTitle">This is the First Day of Your New Life</h1>
+        </div>
+        <div class="galleryItem">
+            <h1 class="galleryTitle">Just Do it!</h1>
+            <img src="https://images.pexels.com/photos/7856965/pexels-photo-7856965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt="" class="galleryImg">
+        </div>
+    </div>
+    <div class="newSeason">
+        <div class="nsItem">
+            <img src="https://images.pexels.com/photos/4753986/pexels-photo-4753986.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt="" class="nsImg">
+        </div>
+        <div class="nsItem">
+            <h3 class="nsTitleSm">WINTER NEW ARRIVALS</h3>
+            <h1 class="nsTitle">New Season</h1>
+            <h1 class="nsTitle">New Collection</h1>
+            <a href="#nav">
+                <button class="nsButton">CHOOSE YOUR STYLE</button>
+            </a>
+        </div>
+        <div class="nsItem">
+            <img src="https://images.pexels.com/photos/7856965/pexels-photo-7856965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt="" class="nsImg">
+        </div>
+    </div>
+    <footer>
+        <div class="footerLeft">
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">About Us</h1>
+                <ul class="fList">
+                    <li class="fListItem">Company</li>
+                    <li class="fListItem ContItem" onclick="document.getElementById('contactForm').style.display='block'">Contact Us</li>
+
+                    <form action="" id="contactForm" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; box-shadow:0px 0px 10px rgba(0,0,0,0.1); z-index:1001; width:90%; max-width:500px;" class="ContIten">
+                        <h2>Contact Us</h2>
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" style="width:100%; padding:10px; margin:10px 0;" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" style="width:100%; padding:10px; margin:10px 0;" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" style="width:100%; padding:10px; margin:10px 0;" required></textarea>
+                        <button type="submit" style="width: 100px; padding:10px; align-items: center; display: block; justify-content: center; background-color:black; color:white; border:none;">Send</button>
+                        <button type="button" onclick="document.getElementById('contactForm').style.display='none'; document.getElementById('blurBackground').style.display='none';" style="width: 100px; padding:10px; align-items: center; display: block; justify-content: center; background-color:red; color:white; border:none; margin-top:10px;">Close</button>
+                    </form>
+                    <div id="blurBackground" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); backdrop-filter:blur(5px); z-index:1000;"></div>
+                    <script>
+                        document.querySelector('.ContItem').onclick = function() {
+                            document.getElementById('contactForm').style.display = 'block';
+                            document.getElementById('blurBackground').style.display = 'block';
+                        }
+                    </script>
+                    <li class="fListItem">Careers</li>
+                    <li class="fListItem">Affiliates</li>
+                    <li class="fListItem">Stores</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Useful Links</h1>
+                <ul class="fList">
+                    <li class="fListItem">Support</li>
+                    <li class="fListItem">Refund</li>
+                    <li class="fListItem">FAQ</li>
+                    <li class="fListItem">Feedback</li>
+                    <li class="fListItem">Stories</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Products</h1>
+                <ul class="fList">
+                    <li class="fListItem"><a href="#pair1">Air Force</a></li>
+                    <li class="fListItem"><a href="#pair2">Air Jordan</a></li>
+                    <li class="fListItem"> <a href="#pair3">Blazer</a></li>
+                    <li class="fListItem"><a href="#pair4">Crater</a></li>
+                    <li class="fListItem"><a href="#pair5">Hippie</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerRight">
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
+                <div class="fMail">
+                    <input type="text" placeholder="your@email.com" class="fInput">
+                    <button class="fButton">Join!</button>
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Follow Us</h1>
+                <div class="fIcons">
+                    <img src="./img/facebook.png" alt="" class="fIcon">
+                    <img src="./img/twitter.png" alt="" class="fIcon">
+                    <img src="./img/instagram.png" alt="" class="fIcon">
+                    <img src="./img/whatsapp.png" alt="" class="fIcon">
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <span class="copyright">@KelvinCode1234 | All Rights Reserved 2024</span>
+            </div>
+        </div>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+
+</html>
